@@ -13,5 +13,5 @@ list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
-add_library(muscle_plugin SHARED MusclePlugin.cc)
+add_library(muscle_plugin SHARED IActuator.cc ITendon.cc MusclePlugin.cc StateMachine.cc)
 target_link_libraries(muscle_plugin ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES} ${roscpp_LIBRARIES})
