@@ -33,9 +33,10 @@ namespace gazebo
 
     class StateMachine{
 
-        public: bool firstUpdate;
+        private: bool firstUpdateState;
+        private: bool firstUpdateLambda;
         public: int state;
-        public: math::Vector3 normal;
+        private: math::Vector3 normal;
         public: int lambda;
         public: double projection;
 
@@ -43,12 +44,11 @@ namespace gazebo
 
         ////////////////////////////////////////
         /// \brief Decides if the muscle is positive, negative or not wrapping
-        /// \param[in] normal the durrent normal of j1 and j2
-        /// \param[in] height the distance between the center point and the line between p1 and p2
+        /// \param[in] insertion the insertion point
+        /// \param[in] fixation the fixation point
+        /// \param[in] center the center of the wrapping surface
         /// \param[in] radius the radius of the wrapping surface
-        /// \param[in] j1 the vector from the center point to p1
-        /// \param[in] j2 the vector from the center point to p2
-        public: void UpdateState(math::Vector3 normal, double height, double radius, math::Vector3 j1, math::Vector3 j2);
+        public: void UpdateState(math::Vector3 insertion, math::Vector3 fixation, math::Vector3 center, double radius);
 
         ////////////////////////////////////////
         /// \brief updates the RevCounter

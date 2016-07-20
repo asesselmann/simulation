@@ -59,15 +59,13 @@ namespace gazebo
     {
         math::Vector3 center;
         double radius;
-        int lambda;
     };
 
     struct Cylinder
     {
         math::Vector3 center;
-        math::Vector3 rotation;
+        math::Matrix3 rotation;
         double radius;
-        int lambda;
     };
 }
 

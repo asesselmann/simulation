@@ -50,6 +50,8 @@ namespace gazebo
         public: ITendon tendon;
 
 	    private: void updateObstacleOrigins();
+	    private: void ComputeStepTime();
+	    private: void ApplyForce();
 
 	    /// \brief Handle an incoming message from ROS
 		/// \param[in] _msg A double value that is used to set the velocity
@@ -66,6 +68,8 @@ namespace gazebo
 	    private: event::ConnectionPtr connection;
 	    private: common::Time prevUpdateTime;
 	    private: common::Time controllerPrevUpdateTime;
+	    private: common::Time currTime;
+	    private: common::Time stepTime;
 	    private: physics::ModelPtr model;
 	    private: std::vector<physics::LinkPtr> links;
 
