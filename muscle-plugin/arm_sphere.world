@@ -208,7 +208,7 @@
           <radius>0.005</radius> <!--m-->
         </spindle>
         <SEE>
-          <stiffness>1.0</stiffness>
+          <stiffness>30680.0</stiffness>
           <!-- <length>0.5</length> -->
           <length0>0.1</length0>
         </SEE>
